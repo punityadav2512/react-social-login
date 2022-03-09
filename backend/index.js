@@ -5,9 +5,10 @@ const passportSetup = require("./passport");
 const passport = require("passport");
 const authRoute = require("./routes/auth");
 const app = express();
+require('dotenv').config();
 
 app.use(
-    cookieSession({ name: "session", keys: ["lama"], maxAge: 24 * 60 * 60 * 100 })
+    cookieSession({ name: "session", keys: ["Punit"], maxAge: 24 * 60 * 60 * 100 })
 );
 
 app.use(passport.initialize());
@@ -23,6 +24,6 @@ app.use(
 
 app.use("/auth", authRoute);
 
-app.listen("5000", () => {
+app.listen("5100", () => {
     console.log("Server is running!");
 });
